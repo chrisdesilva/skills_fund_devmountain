@@ -13,12 +13,12 @@ const LoanCalculator = () => {
     const interestRate60 = 10.99
     const origFee = 0.04
     const multiPrograms = true // only true if there are multiple programs
-    const [multiMetros, showMetros] = useState(true) // true if there are multiple metros that have DIFFERENT max loan amounts for the SAME PROGRAM
+    const [multiMetros, showMetros] = useState(false) // true if there are multiple metros that have DIFFERENT max loan amounts for the SAME PROGRAM
     const [interestPayment, setInterestPayment] = useState({ payment36: null, payment60: null })
     const [monthlyPayment, setMonthlyPayment] = useState({ payment36: null, payment60: null })
     const [loanType, setLoanType] = useState('0') // default to 0 for interest-only, 1 for immediate repayment
     const [loanInformation, setLoanInformation] = useState({ 
-        maxLoanAmt: 19495,
+        maxLoanAmt: 13450,
         loanTerm36: true, // only true if 36 month option is available
         loanTerm60: true, // only true if 60 month option is available
         k: 5, // (program length in weeks / 4) + 2 -- round program length down to nearest number divisible by 4 (ie. 27 week program rounds down to 24, 24 / 4 + 6 = 12, k = 12)
@@ -56,9 +56,9 @@ const LoanCalculator = () => {
     const selectProgram = e => {
         let program = e.target.value
         switch(program) {
-            case "PROGRAM 1": // use this info for default case at bottom
+            case "iOS Immersive": // use this info for default case at bottom
                 setLoanInformation({
-                    maxLoanAmt: 19495,
+                    maxLoanAmt: 13450,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -68,42 +68,92 @@ const LoanCalculator = () => {
                     },
                     '1': null
                 })
-                showMetros(true)
                 setLoanType('0')
                 break;
-            case "PROGRAM 2": 
+            case "Software Quality Assurance": 
                 setLoanInformation({
-                    maxLoanAmt: 14995,
+                    maxLoanAmt: 7050,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
-                        k: 5, 
-                        apr36: 11.16, 
-                        apr60: 12.51
+                        k: 3, 
+                        apr36: 11.34, 
+                        apr60: 12.58
                     },
                     '1': null
                 })
-                showMetros(false)
                 setLoanType('0')
                 break;
-            case "PROGRAM 3": 
+            case "UX Design": 
                 setLoanInformation({
-                    maxLoanAmt: 9995,
+                    maxLoanAmt: 13450,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': {
                         k: 6,
-                        apr36: 11.08,
-                        apr60: 12.48
+                        apr36: 11.16,
+                        apr60: 12.51
                     },
                     '1': null
                 })
-                showMetros(false)
                 setLoanType('0')
+                break;
+            case "UX Design After Hours": 
+                setLoanInformation({
+                    maxLoanAmt: 4300,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': null,
+                    '1': {
+                        apr36: 11.69,
+                        apr60: 12.71
+                    }
+                })
+                setLoanType('1')
+                break;
+            case "Web Development After Hours": 
+                setLoanInformation({
+                    maxLoanAmt: 10450,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': null,
+                    '1': {
+                        apr36: 11.69,
+                        apr60: 12.71
+                    }
+                })
+                setLoanType('1')
+                break;
+            case "Web Development Immersive": 
+                setLoanInformation({
+                    maxLoanAmt: 14450,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': {
+                        k: 5,
+                        apr36: 11.16,
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            case "Web Development Online": 
+                setLoanInformation({
+                    maxLoanAmt: 10450,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': null,
+                    '1': {
+                        apr36: 11.69,
+                        apr60: 12.71
+                    }
+                })
+                setLoanType('1')
                 break;
             default: // info below needs to match info from first program
                 setLoanInformation({
-                    maxLoanAmt: 19495,
+                    maxLoanAmt: 13450,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -200,7 +250,7 @@ const LoanCalculator = () => {
                 <h3 className="text-center">Calculate Your Monthly Payments</h3>
 
                 {/* UPDATE LOAN AMOUNTS AND COST OF LIVING BY PROGRAM BELOW */}
-                <p className="text-center">Choose the loan amount that works best for you. Borrow up to your metro's max (see table below) for the PROGRAM 1, up to $14,995 for the PROGRAM 2 Bootcamp tuition, and up to $9,995 for the PROGRAM 3 Bootcamp tuition.</p>
+                <p className="text-center">Choose the loan amount that works best for you. Borrow up to your program's max tuition and cost of living according to the table below.</p>
                 <LoanCalcPaymentTable />
 
                 <div className="flex flex-col justify-center w-full md:w-1/3">
@@ -210,9 +260,13 @@ const LoanCalculator = () => {
                     <>
                         <label className="text-xs text-center">Select a Program:</label>
                         <select className="rounded border-2 border-primary mb-5 bg-white text-primary text-center" onChange={selectProgram}>
-                            <option value="PROGRAM 1">PROGRAM 1</option>
-                            <option value="PROGRAM 2">PROGRAM 2</option>
-                            <option value="PROGRAM 3">PROGRAM 3</option>
+                            <option value="iOS Immersive">iOS Immersive</option>
+                            <option value="Software Quality Assurance">Software Quality Assurance</option>
+                            <option value="UX Design">UX Design</option>
+                            <option value="UX Design After Hours">UX Design After Hours</option>
+                            <option value="Web Development After Hours">Web Development After Hours</option>
+                            <option value="Web Development Immersive">Web Development Immersive</option>
+                            <option value="Web Development Online">Web Development Online</option>
                         </select>
                     </>
                 }

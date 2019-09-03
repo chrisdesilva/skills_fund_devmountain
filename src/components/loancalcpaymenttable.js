@@ -6,28 +6,52 @@ const LoanCalcPaymentTable = () => (
         <table className="hidden lg:inline">
             <tbody>
                 <tr>
-                    <th className="text-center">Location</th>
+                    <th className="text-center">Program</th>
                     <th className="text-center">Tuition</th>
                     <th className="text-center">Cost of Living</th>
                     <th className="text-center">Max Total</th>
                 </tr>
                 <tr>
-                    <td className="text-center">PROGRAM 1</td>
-                    <td className="text-center">$13,495</td>
-                    <td className="text-center">$6,000</td>
-                    <td className="text-center">$19,495</td>
+                    <td className="text-center">iOS Development Immersive</td>
+                    <td className="text-center">$10,450</td>
+                    <td className="text-center">$3,000</td>
+                    <td className="text-center">$13,450</td>
                 </tr>
                 <tr>
-                    <td className="text-center">PROGRAM 2</td>
-                    <td className="text-center">$14,995</td>
-                    <td className="text-center">$6,000</td>
-                    <td className="text-center">$20,995</td>
+                    <td className="text-center">Software Quality Assurance</td>
+                    <td className="text-center">$7,050</td>
+                    <td className="text-center">--</td>
+                    <td className="text-center">$7,050</td>
                 </tr>
                 <tr>
-                    <td className="text-center">PROGRAM 3</td>
-                    <td className="text-center">$11,995</td>
-                    <td className="text-center">$6,000</td>
-                    <td className="text-center">$17,995</td>
+                    <td className="text-center">UX Design</td>
+                    <td className="text-center">$10,450</td>
+                    <td className="text-center">$3,000</td>
+                    <td className="text-center">$13,450</td>
+                </tr>
+                <tr>
+                    <td className="text-center">UX Design After Hours</td>
+                    <td className="text-center">$4,300</td>
+                    <td className="text-center">--</td>
+                    <td className="text-center">$4,300</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Web Development After Hours</td>
+                    <td className="text-center">$10,450</td>
+                    <td className="text-center">--</td>
+                    <td className="text-center">$10,450</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Web Development Immersive</td>
+                    <td className="text-center">$11,450</td>
+                    <td className="text-center">$3,000</td>
+                    <td className="text-center">$14,450</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Web Development Online</td>
+                    <td className="text-center">$10,450</td>
+                    <td className="text-center">--</td>
+                    <td className="text-center">$10,450</td>
                 </tr>
             </tbody>
         </table>
@@ -36,40 +60,88 @@ const LoanCalcPaymentTable = () => (
         <table className="lg:hidden">
             <tbody>
                 <tr>
-                    <th className="text-center bg-primary text-white rounded">PROGRAM 1</th>
+                    <th className="text-center bg-primary text-white rounded">iOS Development Immersive</th>
                 </tr>
                 <tr>
-                    <td className="text-center">Tuition: $13,495</td>
+                    <td className="text-center">Tuition: $10,450</td>
                 </tr>
                 <tr>
-                    <td className="text-center">Cost of Living: $6,000</td>
+                    <td className="text-center">Cost of Living: $3,000</td>
                 </tr>
                 <tr>
-                    <td className="text-center">Max Total: $19,495</td>
+                    <td className="text-center">Max Total: $13,450</td>
                 </tr>
                 <tr>
-                    <th className="text-center bg-primary text-white rounded">PROGRAM 2</th>
+                    <th className="text-center bg-primary text-white rounded">Software Quality Assurance</th>
                 </tr>
                 <tr>
-                    <td className="text-center">Tuition: $14,995</td>
+                    <td className="text-center">Tuition: $7,050</td>
                 </tr>
                 <tr>
-                    <td className="text-center">Cost of Living: $6,000</td>
+                    <td className="text-center">Cost of Living: --</td>
                 </tr>
                 <tr>
-                    <td className="text-center">Max Total: $20,995</td>
+                    <td className="text-center">Max Total: $7,050</td>
                 </tr>
                 <tr>
-                    <th className="text-center bg-primary text-white rounded flex flex-col w-64"><span>PROGRAM 3</span></th>
+                    <th className="text-center bg-primary text-white rounded flex flex-col w-64"><span>UX Design</span></th>
                 </tr>
                 <tr>
-                    <td className="text-center">Tuition: $11,995</td>
+                    <td className="text-center">Tuition: $10,450</td>
                 </tr>
                 <tr>
-                    <td className="text-center">Cost of Living: $6,000</td>
+                    <td className="text-center">Cost of Living: $3,000</td>
                 </tr>
                 <tr>
-                    <td className="text-center">Max Total: $17,995</td>
+                    <td className="text-center">Max Total: $13,450</td>
+                </tr>
+                <tr>
+                    <th className="text-center bg-primary text-white rounded flex flex-col w-64"><span>UX Design After Hours</span></th>
+                </tr>
+                <tr>
+                    <td className="text-center">Tuition: $4,300</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Cost of Living: --</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Max Total: $4,300</td>
+                </tr>
+                <tr>
+                    <th className="text-center bg-primary text-white rounded flex flex-col w-64"><span>Web Development After Hours</span></th>
+                </tr>
+                <tr>
+                    <td className="text-center">Tuition: $10,450</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Cost of Living: --</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Max Total: $10,450</td>
+                </tr>
+                <tr>
+                    <th className="text-center bg-primary text-white rounded flex flex-col w-64"><span>Web Development Immersive</span></th>
+                </tr>
+                <tr>
+                    <td className="text-center">Tuition: $11,450</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Cost of Living: $3,000</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Max Total: $13,450</td>
+                </tr>
+                <tr>
+                    <th className="text-center bg-primary text-white rounded flex flex-col w-64"><span>Web Development Online</span></th>
+                </tr>
+                <tr>
+                    <td className="text-center">Tuition: $10,450</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Cost of Living: --</td>
+                </tr>
+                <tr>
+                    <td className="text-center">Max Total: $10,450</td>
                 </tr>
             </tbody>
         </table>

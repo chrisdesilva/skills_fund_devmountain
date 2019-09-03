@@ -4,16 +4,16 @@ import { UnmountClosed as Collapse } from 'react-collapse'
 
 const costOfLiving = true // true if at least one program has cost of living included
 const interestOnly = true // true if interest-only payments are an option
-const immediateRepayment = false // true if immediate repayment is an option
+const immediateRepayment = true // true if immediate repayment is an option
 const multipleLoanLengths = true // true if 36 and 60 month options are both available
 
 // interest payment FAQ info
-const interestRate36 = 'X.XX%'
-const interestRate60 = 'XX.XX%'
-const APR36 = 'XX.XX - XX.XX%'
-const APR60 = 'XX.XX - XX.XX%'
-const IOPayment36 = '$XX.XX'
-const IOPayment60 = '$XX.XX'
+const interestRate36 = '8.99%'
+const interestRate60 = '10.99%'
+const APR36 = '11.16 - 11.69'
+const APR60 = '12.51 - 12.71%'
+const IOPayment36 = '$77.91'
+const IOPayment60 = '$95.25'
 
 // update with school-specific info
 const FAQ = props => {
@@ -38,9 +38,13 @@ const FAQ = props => {
           <Collapse isOpened={q1} springConfig={{stiffness: 150, damping: 30}}>
                <p>The maximum amount you can borrow will depend on your program. You can finance your tuition and cost of living expenses.</p>
                <ul>
-                    <li><strong>For PROGRAM 1 NAME,</strong> you may borrow from $2,000 up to the max loan amount for tuition & cost of living for your metro.</li>
-                    <li><strong>For PROGRAM 2 NAME,</strong> you may borrow from $2,000 to $14,995 for tuition. You may also borrow up to $4,000 for cost of living.</li>
-                    <li><strong>For PROGRAM 3 NAME,</strong> you may borrow from $2,000 to $9,995 for tuition.</li>
+                    <li><strong>For DevMountain's UX Design program,</strong> you may borrow from $2,000 to $10,450 for tuition. You may also borrow up to $3,000 for cost of living.</li>
+                    <li><strong>For DevMountain's UX Design After Hours program,</strong> you may borrow from $2,000 to $4,300 for tuition. Cost of living is not available.</li>
+                    <li><strong>For DevMountain's iOS Immersive program,</strong> you may borrow from $2,000 to $10,450 for tuition. You may also borrow up to $3,000 for cost of living.</li>
+                    <li><strong>For DevMountain's Software Quality Assurance program,</strong> you may borrow from $2,000 to $7,050 for tuition. Cost of living is not available.</li>
+                    <li><strong>For DevMountain's Web Development After Hours program,</strong> you may borrow from $2,000 to $10,450 for tuition. Cost of living is not available.</li>
+                    <li><strong>For DevMountain's Web Development Immersive program,</strong> you may borrow from $2,000 to $11,450 for tuition. You may also borrow up to $3,000 for cost of living.</li>
+                    <li><strong>For DevMountain's Web Development Online program,</strong> you may borrow from $2,000 to $10,450 for tuition. Cost of living is not available.</li>
                </ul>
                <p className="mb-0 pb-4"><strong>Please note:</strong> In order to finance cost of living, borrow at least $2,000 in tuition financing. You will pay your cash deposit directly to <strong>{props.schoolName}</strong>.</p>
           </Collapse>
@@ -51,7 +55,7 @@ const FAQ = props => {
                <Collapse isOpened={q2} springConfig={{stiffness: 150, damping: 30}}>
                          
                          {/* INCLUDE vvv IF ONLY CERTAIN PROGRAMS OFFER COST OF LIVING */}
-                         {/* <p><strong>Only the Onsite Bootcamp is eligible for cost of living.</strong></p> */}
+                         <p><strong>Only the UX Design, iOS Immersive, and Web Development Immersive programs are eligible for cost of living.</strong></p>
                          {/* INCLUDE ^^^ IF ONLY CERTAIN PROGRAMS OFFER COST OF LIVING */}
 
                          <p>Your lump sum living stipend will be sent to you on the second Wednesday after your program start. You can elect to have your cost of living disbursed via electronic funds transfer or mailed directly to the address provided in their loan application.</p>

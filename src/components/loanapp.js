@@ -11,20 +11,24 @@ const LoanApp = React.forwardRef((props, ref) => {
     const [submitted, isSubmitted] = useState(false)
     const [disclaimers, toggleDisclaimers] = useState(false)
     const [programInfo, setProgramInfo] = useState({
-        programName: 'Program 1',
+        programName: 'Web Development Immersive',
         active: { 
             program1: false,
             program2: false,
-            program3: false
+            program3: false,
+            program4: false,
+            program5: false,
+            program6: false,
+            program7: false
         }
     })
-    const [loanUrl, setLoanUrl] = useState(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=LENDERCODE1`) // if multiple programs, set lenderCode to first program option
-    const formID = 'HUBSPOT FORM ID' // create Hubspot form, get form id after publishing
+    const [loanUrl, setLoanUrl] = useState(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDMWD17`) // if multiple programs, set lenderCode to first program option
+    const formID = 'fd391850-d431-42a3-8176-447ef29c1255' // create Hubspot form, get form id after publishing
     const formName = `${props.schoolName}_apply_now program-apply flex flex-col items-center`
     const costOfLiving = true // set to false of cost of living is not available
     const multiplePrograms = true // set to false if there is only one program
     const onlinePrograms = true // set to true if there is at least one online/remote program offered
-    const schoolHQState = 'WA' // if online programs are offered, put the two letter abbreviation for school headquarters state
+    const schoolHQState = 'UT' // if online programs are offered, put the two letter abbreviation for school headquarters state
 
     const activeClass = "cursor-pointer border-2 rounded border-black text-center py-2 text-white bg-primary mb-2" // highlights selected option in loan app form
     const inactiveClass = "cursor-pointer border-2 rounded border-black text-center py-2 mb-2"
@@ -38,47 +42,123 @@ const LoanApp = React.forwardRef((props, ref) => {
         switch(programNumber) {
             case 1: // info should match default
                 setProgramInfo({
-                    programName: 'Program 1', 
+                    programName: 'Web Development Immersive', 
                     active: {
                         program1: !programInfo.active.program1, 
                         program2: false, 
-                        program3: false
+                        program3: false,
+                        program4: false,
+                        program5: false,
+                        program6: false,
+                        program7: false
                     }
                 })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=LENDERCODE1`) // update lenderCode with market segment code from LP
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDMWD17`) // update lenderCode with market segment code from LP
                 break;
             case 2:
                 setProgramInfo({
-                    programName: 'Program 2', 
+                    programName: 'Web Development Online', 
                     active: {
                         program1: false, 
                         program2: !programInfo.active.program2, 
-                        program3: false
+                        program3: false,
+                        program4: false,
+                        program5: false,
+                        program6: false,
+                        program7: false
                     }
                 })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=LENDERCODE2`) // update lenderCode with market segment code from LP
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDMWON17`) // update lenderCode with market segment code from LP
                 break;
             case 3:
                 setProgramInfo({
-                    programName: 'Program 3', 
+                    programName: 'Web Development After-Hours', 
                     active: {
                         program1: false, 
                         program2: false, 
-                        program3: !programInfo.active.program3
+                        program3: !programInfo.active.program3,
+                        program4: false,
+                        program5: false,
+                        program6: false,
+                        program7: false,
                     }
                 })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=LENDERCODE3`) // update lenderCode with market segment code from LP
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDMWON19`) // update lenderCode with market segment code from LP
+                break;
+            case 4:
+                setProgramInfo({
+                    programName: 'UX Design Immersive', 
+                    active: {
+                        program1: false, 
+                        program2: false, 
+                        program3: false,
+                        program4: !programInfo.active.program4,
+                        program5: false,
+                        program6: false,
+                        program7: false,
+                    }
+                })
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDMUX17`) // update lenderCode with market segment code from LP
+                break;
+            case 5:
+                setProgramInfo({
+                    programName: 'UX Design After-Hours', 
+                    active: {
+                        program1: false, 
+                        program2: false, 
+                        program3: false,
+                        program4: false,
+                        program5: !programInfo.active.program5,
+                        program6: false,
+                        program7: false,
+                    }
+                })
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDMUXAH19`) // update lenderCode with market segment code from LP
+                break;
+            case 6:
+                setProgramInfo({
+                    programName: 'iOS Development Immersive', 
+                    active: {
+                        program1: false, 
+                        program2: false, 
+                        program3: false,
+                        program4: false,
+                        program5: false,
+                        program6: !programInfo.active.program6,
+                        program7: false,
+                    }
+                })
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDMIOS17`) // update lenderCode with market segment code from LP
+                break;
+            case 7:
+                setProgramInfo({
+                    programName: 'Software QA Immersive', 
+                    active: {
+                        program1: false, 
+                        program2: false, 
+                        program3: false,
+                        program4: false,
+                        program5: false,
+                        program6: false,
+                        program7: !programInfo.active.program7,
+                    }
+                })
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDMQA19`) // update lenderCode with market segment code from LP
                 break;
             default: // info should match case 1
-                setProgramInfo({ 
-                    programName: 'Program 1', 
+                setProgramInfo({
+                    programName: 'Web Development Immersive', 
                     active: {
                         program1: !programInfo.active.program1, 
                         program2: false, 
-                        program3: false
+                        program3: false,
+                        program4: false,
+                        program5: false,
+                        program6: false,
+                        program7: false
                     }
                 })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=LENDERCODE1`)
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDMWD17`) // update lenderCode with market segment code from LP
                 break;
         }
     }
@@ -126,7 +206,7 @@ const LoanApp = React.forwardRef((props, ref) => {
             "value": "Student"
             },
             {
-            "name": "select_a_SCHOOLNAME_program", // update school name to match form field on Hubspot
+            "name": "select_a_devmountain_program", // update school name to match form field on Hubspot, *** set to program_name if only one program ***
             "value": `${programInfo.programName}`
             },
             {
@@ -184,9 +264,13 @@ const LoanApp = React.forwardRef((props, ref) => {
                         <p className="text-center text-sm">Select a {props.schoolName} program</p>
                         
                         {/* WHEN ADDING AND REMOVING PROGRAMS, PAY ATTENTION TO THE NUMBER AT THE END OF programInfo.active and handleProgramSelect */}
-                        <p className={programInfo.active.program1 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(1)}>Program 1</p>
-                        <p className={programInfo.active.program2 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(2)}>Program 2</p>
-                        <p className={programInfo.active.program3 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(3)}>Program 3</p>
+                        <p className={programInfo.active.program1 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(1)}>Web Development Immersive</p>
+                        <p className={programInfo.active.program2 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(2)}>Web Development Online</p>
+                        <p className={programInfo.active.program3 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(3)}>Web Development After-Hours</p>
+                        <p className={programInfo.active.program4 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(4)}>UX Design Immersive</p>
+                        <p className={programInfo.active.program5 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(5)}>UX Design After-Hours</p>
+                        <p className={programInfo.active.program6 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(6)}>iOS Development Immersive</p>
+                        <p className={programInfo.active.program7 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(7)}>Software QA Immersive</p>
                     </div>
                 }
                 <div className="hidden">
