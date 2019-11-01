@@ -6,7 +6,7 @@ const InterestOnlyTerms = props => (
         {/* -----WEB VERSION START----- */}
 
         <div className="p-0 md:p-4 hidden lg:inline">
-            <p>This example shows the monthly payments of a {props.loanExampleAmt} <strong>interest-only</strong> Skills Fund loan{props.programName && <span> for <strong>{props.programName}</strong></span>}:</p>
+            <p>This example shows the monthly payments of a {props.loanExampleAmt} <strong>interest-only</strong> Skills Fund loan{props.programName && <span> for the <strong>{props.programName}</strong></span>}:</p>
             <table>
                 <tbody>
                     <tr>
@@ -51,7 +51,7 @@ const InterestOnlyTerms = props => (
         {/* -----MOBILE VERSION START----- */}
 
         <div className="p-0 md:p-4 lg:hidden">
-            <p>This example shows the monthly payments of a {props.loanExampleAmt} <strong>interest-only</strong> Skills Fund loan{props.programName && <span> for <strong>{props.programName}</strong></span>}:</p>
+            <p>This example shows the monthly payments of a {props.loanExampleAmt} <strong>interest-only</strong> Skills Fund loan{props.programName && <span> for the <strong>{props.programName}</strong></span>}:</p>
             <table>
                 <tbody>
                     <tr>

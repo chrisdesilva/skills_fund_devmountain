@@ -6,7 +6,7 @@ const ImmRepaymentTerms = props => (
         {/* -----WEB VERSION START----- */}
 
         <div className="p-0 md:p-4 hidden lg:inline">
-        <p>This example shows the monthly payments of a {props.loanExampleAmt} <strong>immediate repayment</strong> Skills Fund loan{props.programName && <span> for <strong>{props.programName}</strong></span>}:</p>
+        <p>This example shows the monthly payments of a {props.loanExampleAmt} <strong>immediate repayment</strong> Skills Fund loan{props.programName && <span> for the <strong>{props.programName}</strong></span>}:</p>
             <table>
                 <tbody>
                     <tr>
@@ -45,7 +45,7 @@ const ImmRepaymentTerms = props => (
         {/* -----MOBILE VERSION START----- */}
 
         <div className="p-0 md:p-4 lg:hidden">
-        <p>This example shows the monthly payments of a {props.loanExampleAmt} <strong>immediate repayment</strong> Skills Fund loan{props.programName && <span> for <strong>{props.programName}</strong></span>}:</p>
+        <p>This example shows the monthly payments of a {props.loanExampleAmt} <strong>immediate repayment</strong> Skills Fund loan{props.programName && <span> for the <strong>{props.programName}</strong></span>}:</p>
             <table>
                 <tbody>
                     <tr>

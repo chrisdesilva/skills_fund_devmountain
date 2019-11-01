@@ -36,8 +36,8 @@ const schoolInfo = {
             IOPayment60: '$67.15',
             FullMonthlyPayment60: '$159.38',
             LoanExampleAmt: '$7,500',
-            LoanExampleOFeeAmt: '$282',
-            LoanExampleAmtPlusOFee: '$7,332',
+            LoanExampleOFeeAmt: '$300',
+            LoanExampleAmtPlusOFee: '$7,800',
             programLength: '1' // program length in months
         }
 ],
