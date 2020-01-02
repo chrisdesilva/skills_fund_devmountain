@@ -111,19 +111,19 @@ const LoanCalculator = () => {
                 })
                 setLoanType('1')
                 break;
-            case "Web Development After Hours": 
-                setLoanInformation({
-                    maxLoanAmt: 10450,
-                    loanTerm36: true,
-                    loanTerm60: true,
-                    '0': null,
-                    '1': {
-                        apr36: 11.69,
-                        apr60: 12.71
-                    }
-                })
-                setLoanType('1')
-                break;
+            // case "Web Development After Hours": 
+            //     setLoanInformation({
+            //         maxLoanAmt: 10450,
+            //         loanTerm36: true,
+            //         loanTerm60: true,
+            //         '0': null,
+            //         '1': {
+            //             apr36: 11.69,
+            //             apr60: 12.71
+            //         }
+            //     })
+            //     setLoanType('1')
+            //     break;
             case "Web Development Immersive": 
                 setLoanInformation({
                     maxLoanAmt: 14450,
@@ -138,19 +138,19 @@ const LoanCalculator = () => {
                 })
                 setLoanType('0')
                 break;
-            case "Web Development Online": 
-                setLoanInformation({
-                    maxLoanAmt: 10450,
-                    loanTerm36: true,
-                    loanTerm60: true,
-                    '0': null,
-                    '1': {
-                        apr36: 11.69,
-                        apr60: 12.71
-                    }
-                })
-                setLoanType('1')
-                break;
+            // case "Web Development Online": 
+            //     setLoanInformation({
+            //         maxLoanAmt: 10450,
+            //         loanTerm36: true,
+            //         loanTerm60: true,
+            //         '0': null,
+            //         '1': {
+            //             apr36: 11.69,
+            //             apr60: 12.71
+            //         }
+            //     })
+            //     setLoanType('1')
+            //     break;
             default: // info below needs to match info from first program
                 setLoanInformation({
                     maxLoanAmt: 13450,
@@ -264,9 +264,9 @@ const LoanCalculator = () => {
                             <option value="Software Quality Assurance">Software Quality Assurance</option>
                             <option value="UX Design">UX Design</option>
                             <option value="UX Design After Hours">UX Design After Hours</option>
-                            <option value="Web Development After Hours">Web Development After Hours</option>
+                            {/* <option value="Web Development After Hours">Web Development After Hours</option> */}
                             <option value="Web Development Immersive">Web Development Immersive</option>
-                            <option value="Web Development Online">Web Development Online</option>
+                            {/* <option value="Web Development Online">Web Development Online</option> */}
                         </select>
                     </>
                 }
