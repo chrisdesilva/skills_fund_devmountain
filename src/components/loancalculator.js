@@ -3,9 +3,9 @@ import LoanCalcPaymentTable from "./loancalcpaymenttable"
 import { UnmountClosed as Collapse } from "react-collapse"
 
 const LoanCalculator = () => {
-  const defaultLoanAmount = 10000 // defaultLoanAmount, placeholder, and loanAmount/setLoanAmount should all be the same number
-  const placeholder = "$10,000"
-  const [loanAmount, setLoanAmount] = useState(10000)
+  const defaultLoanAmount = 9900 // defaultLoanAmount, placeholder, and loanAmount/setLoanAmount should all be the same number
+  const placeholder = "$9,900"
+  const [loanAmount, setLoanAmount] = useState(9900)
   const [loanOptions, showLoanOptions] = useState(false)
   const minLoanAmt = 2000
   const interestRate36 = 8.99
@@ -23,7 +23,7 @@ const LoanCalculator = () => {
   })
   const [loanType, setLoanType] = useState("0") // default to 0 for interest-only, 1 for immediate repayment
   const [loanInformation, setLoanInformation] = useState({
-    maxLoanAmt: 13450,
+    maxLoanAmt: 9900,
     loanTerm36: true, // only true if 36 month option is available
     loanTerm60: true, // only true if 60 month option is available
     k: 5, // (program length in weeks / 4) + 2 -- round program length down to nearest number divisible by 4 (ie. 27 week program rounds down to 24, 24 / 4 + 6 = 12, k = 12)
@@ -72,9 +72,9 @@ const LoanCalculator = () => {
   const selectProgram = e => {
     let program = e.target.value
     switch (program) {
-      case "iOS Immersive": // use this info for default case at bottom
+      case "iOS Remote": // use this info for default case at bottom
         setLoanInformation({
-          maxLoanAmt: 13450,
+          maxLoanAmt: 9900,
           loanTerm36: true,
           loanTerm60: true,
           "0": {
@@ -86,9 +86,9 @@ const LoanCalculator = () => {
         })
         setLoanType("0")
         break
-      case "Software Quality Assurance":
+      case "Software Quality Assurance Remote":
         setLoanInformation({
-          maxLoanAmt: 7050,
+          maxLoanAmt: 4900,
           loanTerm36: true,
           loanTerm60: true,
           "0": {
@@ -100,23 +100,23 @@ const LoanCalculator = () => {
         })
         setLoanType("0")
         break
-      case "UX Design":
+      // case "UX Design":
+      //   setLoanInformation({
+      //     maxLoanAmt: 13450,
+      //     loanTerm36: true,
+      //     loanTerm60: true,
+      //     "0": {
+      //       k: 6,
+      //       apr36: 11.16,
+      //       apr60: 12.51,
+      //     },
+      //     "1": null,
+      //   })
+      //   setLoanType("0")
+      //   break
+      case "UX Design After Hours Remote":
         setLoanInformation({
-          maxLoanAmt: 13450,
-          loanTerm36: true,
-          loanTerm60: true,
-          "0": {
-            k: 6,
-            apr36: 11.16,
-            apr60: 12.51,
-          },
-          "1": null,
-        })
-        setLoanType("0")
-        break
-      case "UX Design After Hours":
-        setLoanInformation({
-          maxLoanAmt: 4300,
+          maxLoanAmt: 3900,
           loanTerm36: true,
           loanTerm60: true,
           "0": null,
@@ -140,9 +140,9 @@ const LoanCalculator = () => {
       //     })
       //     setLoanType('1')
       //     break;
-      case "Web Development Immersive":
+      case "Web Development Remote":
         setLoanInformation({
-          maxLoanAmt: 14450,
+          maxLoanAmt: 9900,
           loanTerm36: true,
           loanTerm60: true,
           "0": {
@@ -170,7 +170,7 @@ const LoanCalculator = () => {
       default:
         // info below needs to match info from first program
         setLoanInformation({
-          maxLoanAmt: 13450,
+          maxLoanAmt: 9900,
           loanTerm36: true,
           loanTerm60: true,
           "0": {
@@ -283,17 +283,17 @@ const LoanCalculator = () => {
                 className="rounded border-2 border-primary mb-5 bg-white text-primary text-center"
                 onChange={selectProgram}
               >
-                <option value="iOS Immersive">iOS Immersive</option>
-                <option value="Software Quality Assurance">
-                  Software Quality Assurance
+                <option value="iOS Remote">iOS Remote</option>
+                <option value="Software Quality Assurance Remote">
+                  Software Quality Assurance Remote
                 </option>
-                <option value="UX Design">UX Design</option>
-                <option value="UX Design After Hours">
-                  UX Design After Hours
+                {/* <option value="UX Design">UX Design</option> */}
+                <option value="UX Design After Hours Remote">
+                  UX Design After Hours Remote
                 </option>
                 {/* <option value="Web Development After Hours">Web Development After Hours</option> */}
-                <option value="Web Development Immersive">
-                  Web Development Immersive
+                <option value="Web Development Remote">
+                  Web Development Remote
                 </option>
                 {/* <option value="Web Development Online">Web Development Online</option> */}
               </select>

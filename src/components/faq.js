@@ -49,34 +49,34 @@ const FAQ = props => {
           finance your tuition and cost of living expenses.
         </p>
         <ul>
-          <li>
+          {/* <li>
             <strong>For DevMountain's UX Design program,</strong> you may borrow
             from $2,000 to $10,450 for tuition. You may also borrow up to $3,000
             for cost of living.
-          </li>
+          </li> */}
           <li>
-            <strong>For DevMountain's UX Design After Hours program,</strong>{" "}
-            you may borrow from $2,000 to $4,300 for tuition. Cost of living is
+            <strong>
+              For DevMountain's UX Design After Hours Remote program,
+            </strong>{" "}
+            you may borrow from $2,000 to $3,900 for tuition. Cost of living is
             not available.
           </li>
           <li>
-            <strong>For DevMountain's iOS Immersive program,</strong> you may
-            borrow from $2,000 to $10,450 for tuition. You may also borrow up to
+            <strong>For DevMountain's iOS Remote program,</strong> you may
+            borrow from $2,000 to $6,900 for tuition. You may also borrow up to
             $3,000 for cost of living.
           </li>
           <li>
             <strong>
-              For DevMountain's Software Quality Assurance program,
+              For DevMountain's Software Quality Assurance Remote program,
             </strong>{" "}
-            you may borrow from $2,000 to $7,050 for tuition. Cost of living is
+            you may borrow from $2,000 to $4,900 for tuition. Cost of living is
             not available.
           </li>
           {/* <li><strong>For DevMountain's Web Development After Hours program,</strong> you may borrow from $2,000 to $10,450 for tuition. Cost of living is not available.</li> */}
           <li>
-            <strong>
-              For DevMountain's Web Development Immersive program,
-            </strong>{" "}
-            you may borrow from $2,000 to $11,450 for tuition. You may also
+            <strong>For DevMountain's Web Development Remote program,</strong>{" "}
+            you may borrow from $2,000 to $6,900 for tuition. You may also
             borrow up to $3,000 for cost of living.
           </li>
           {/* <li><strong>For DevMountain's Web Development Online program,</strong> you may borrow from $2,000 to $10,450 for tuition. Cost of living is not available.</li> */}
@@ -142,8 +142,8 @@ const FAQ = props => {
             {/* INCLUDE vvv IF ONLY CERTAIN PROGRAMS OFFER COST OF LIVING */}
             <p>
               <strong>
-                Only the UX Design, iOS Immersive, and Web Development Immersive
-                programs are eligible for cost of living.
+                Only the iOS Remote and Web Development Remote programs are
+                eligible for cost of living.
               </strong>
             </p>
             {/* INCLUDE ^^^ IF ONLY CERTAIN PROGRAMS OFFER COST OF LIVING */}
