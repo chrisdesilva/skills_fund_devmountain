@@ -299,14 +299,14 @@ const LoanApp = React.forwardRef((props, ref) => {
               </p>
               {/* <p className={programInfo.active.program2 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(2)}>Web Development Online</p>
                         <p className={programInfo.active.program3 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(3)}>Web Development After-Hours</p> */}
-              <p
+              {/* <p
                 className={
                   programInfo.active.program4 ? activeClass : inactiveClass
                 }
                 onClick={() => handleProgramSelect(4)}
               >
                 UX Design Immersive
-              </p>
+              </p> */}
               <p
                 className={
                   programInfo.active.program5 ? activeClass : inactiveClass
