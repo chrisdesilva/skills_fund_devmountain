@@ -58,25 +58,25 @@ const FAQ = props => {
             <strong>
               For DevMountain's UX Design After Hours Remote program,
             </strong>{" "}
-            you may borrow from $2,000 to $3,900 for tuition. Cost of living is
+            you may borrow from $2,000 to $3,450 for tuition. Cost of living is
             not available.
           </li>
           <li>
             <strong>For DevMountain's iOS Remote program,</strong> you may
-            borrow from $2,000 to $6,900 for tuition. You may also borrow up to
+            borrow from $2,000 to $6,450 for tuition. You may also borrow up to
             $3,000 for cost of living.
           </li>
           <li>
             <strong>
               For DevMountain's Software Quality Assurance Remote program,
             </strong>{" "}
-            you may borrow from $2,000 to $4,900 for tuition. Cost of living is
+            you may borrow from $2,000 to $4,450 for tuition. Cost of living is
             not available.
           </li>
           {/* <li><strong>For DevMountain's Web Development After Hours program,</strong> you may borrow from $2,000 to $10,450 for tuition. Cost of living is not available.</li> */}
           <li>
             <strong>For DevMountain's Web Development Remote program,</strong>{" "}
-            you may borrow from $2,000 to $6,900 for tuition. You may also
+            you may borrow from $2,000 to $6,450 for tuition. You may also
             borrow up to $3,000 for cost of living.
           </li>
           {/* <li><strong>For DevMountain's Web Development Online program,</strong> you may borrow from $2,000 to $10,450 for tuition. Cost of living is not available.</li> */}

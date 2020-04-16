@@ -3,9 +3,9 @@ import LoanCalcPaymentTable from "./loancalcpaymenttable"
 import { UnmountClosed as Collapse } from "react-collapse"
 
 const LoanCalculator = () => {
-  const defaultLoanAmount = 9900 // defaultLoanAmount, placeholder, and loanAmount/setLoanAmount should all be the same number
-  const placeholder = "$9,900"
-  const [loanAmount, setLoanAmount] = useState(9900)
+  const defaultLoanAmount = 6450 // defaultLoanAmount, placeholder, and loanAmount/setLoanAmount should all be the same number
+  const placeholder = "$6,450"
+  const [loanAmount, setLoanAmount] = useState(6450)
   const [loanOptions, showLoanOptions] = useState(false)
   const minLoanAmt = 2000
   const interestRate36 = 8.99
@@ -23,7 +23,7 @@ const LoanCalculator = () => {
   })
   const [loanType, setLoanType] = useState("0") // default to 0 for interest-only, 1 for immediate repayment
   const [loanInformation, setLoanInformation] = useState({
-    maxLoanAmt: 9900,
+    maxLoanAmt: 6450,
     loanTerm36: true, // only true if 36 month option is available
     loanTerm60: true, // only true if 60 month option is available
     k: 5, // (program length in weeks / 4) + 2 -- round program length down to nearest number divisible by 4 (ie. 27 week program rounds down to 24, 24 / 4 + 6 = 12, k = 12)
@@ -74,7 +74,7 @@ const LoanCalculator = () => {
     switch (program) {
       case "iOS Remote": // use this info for default case at bottom
         setLoanInformation({
-          maxLoanAmt: 9900,
+          maxLoanAmt: 6450,
           loanTerm36: true,
           loanTerm60: true,
           "0": {
@@ -88,7 +88,7 @@ const LoanCalculator = () => {
         break
       case "Software Quality Assurance Remote":
         setLoanInformation({
-          maxLoanAmt: 4900,
+          maxLoanAmt: 4450,
           loanTerm36: true,
           loanTerm60: true,
           "0": {
@@ -116,7 +116,7 @@ const LoanCalculator = () => {
       //   break
       case "UX Design After Hours Remote":
         setLoanInformation({
-          maxLoanAmt: 3900,
+          maxLoanAmt: 3450,
           loanTerm36: true,
           loanTerm60: true,
           "0": null,
@@ -142,7 +142,7 @@ const LoanCalculator = () => {
       //     break;
       case "Web Development Remote":
         setLoanInformation({
-          maxLoanAmt: 9900,
+          maxLoanAmt: 6450,
           loanTerm36: true,
           loanTerm60: true,
           "0": {
@@ -170,7 +170,7 @@ const LoanCalculator = () => {
       default:
         // info below needs to match info from first program
         setLoanInformation({
-          maxLoanAmt: 9900,
+          maxLoanAmt: 6450,
           loanTerm36: true,
           loanTerm60: true,
           "0": {

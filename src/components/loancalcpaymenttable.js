@@ -13,15 +13,15 @@ const LoanCalcPaymentTable = () => (
         </tr>
         <tr>
           <td className="text-center">iOS Development Remote</td>
-          <td className="text-center">$6,900</td>
+          <td className="text-center">$6,450</td>
           <td className="text-center">$3,000</td>
-          <td className="text-center">$9,900</td>
+          <td className="text-center">$9,450</td>
         </tr>
         <tr>
           <td className="text-center">Software Quality Assurance Remote</td>
-          <td className="text-center">$4,900</td>
+          <td className="text-center">$4,450</td>
           <td className="text-center">--</td>
-          <td className="text-center">$4,900</td>
+          <td className="text-center">$4,450</td>
         </tr>
         {/* <tr>
 					<td className="text-center">UX Design</td>
@@ -31,9 +31,9 @@ const LoanCalcPaymentTable = () => (
 				</tr> */}
         <tr>
           <td className="text-center">UX Design After Hours Remote</td>
-          <td className="text-center">$3,900</td>
+          <td className="text-center">$3,450</td>
           <td className="text-center">--</td>
-          <td className="text-center">$3,900</td>
+          <td className="text-center">$3,450</td>
         </tr>
         {/* <tr>
                     <td className="text-center">Web Development After Hours</td>
@@ -43,9 +43,9 @@ const LoanCalcPaymentTable = () => (
                 </tr> */}
         <tr>
           <td className="text-center">Web Development Remote</td>
-          <td className="text-center">$6,900</td>
+          <td className="text-center">$6,450</td>
           <td className="text-center">$3,000</td>
-          <td className="text-center">$9,900</td>
+          <td className="text-center">$9,450</td>
         </tr>
         {/* <tr>
                     <td className="text-center">Web Development Online</td>
@@ -65,13 +65,13 @@ const LoanCalcPaymentTable = () => (
           </th>
         </tr>
         <tr>
-          <td className="text-center">Tuition: $6,900</td>
+          <td className="text-center">Tuition: $6,450</td>
         </tr>
         <tr>
           <td className="text-center">Cost of Living: $3,000</td>
         </tr>
         <tr>
-          <td className="text-center">Max Total: $9,900</td>
+          <td className="text-center">Max Total: $9,450</td>
         </tr>
         <tr>
           <th className="text-center bg-primary text-white rounded">
@@ -79,13 +79,13 @@ const LoanCalcPaymentTable = () => (
           </th>
         </tr>
         <tr>
-          <td className="text-center">Tuition: $4,900</td>
+          <td className="text-center">Tuition: $4,450</td>
         </tr>
         <tr>
           <td className="text-center">Cost of Living: --</td>
         </tr>
         <tr>
-          <td className="text-center">Max Total: $4,900</td>
+          <td className="text-center">Max Total: $4,450</td>
         </tr>
         {/* <tr>
 					<th className="text-center bg-primary text-white rounded flex flex-col w-64">
@@ -107,13 +107,13 @@ const LoanCalcPaymentTable = () => (
           </th>
         </tr>
         <tr>
-          <td className="text-center">Tuition: $3,900</td>
+          <td className="text-center">Tuition: $3,450</td>
         </tr>
         <tr>
           <td className="text-center">Cost of Living: --</td>
         </tr>
         <tr>
-          <td className="text-center">Max Total: $3,900</td>
+          <td className="text-center">Max Total: $3,450</td>
         </tr>
         {/* <tr>
                     <th className="text-center bg-primary text-white rounded flex flex-col w-64"><span>Web Development After Hours</span></th>
@@ -133,13 +133,13 @@ const LoanCalcPaymentTable = () => (
           </th>
         </tr>
         <tr>
-          <td className="text-center">Tuition: $6,900</td>
+          <td className="text-center">Tuition: $6,450</td>
         </tr>
         <tr>
           <td className="text-center">Cost of Living: $3,000</td>
         </tr>
         <tr>
-          <td className="text-center">Max Total: $9,900</td>
+          <td className="text-center">Max Total: $9,450</td>
         </tr>
         {/* <tr>
                     <th className="text-center bg-primary text-white rounded flex flex-col w-64"><span>Web Development Online</span></th>
