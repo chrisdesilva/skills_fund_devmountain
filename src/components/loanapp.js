@@ -1,182 +1,65 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import ReactGA from "react-ga"
 import ReactPixel from "react-facebook-pixel"
 import marching from "../images/PeopleMarchColor.png"
 import { UnmountClosed as Collapse } from "react-collapse"
+import {
+  faq,
+  hubspotFormId,
+  programLoanInfo,
+  schoolName,
+  selectAProgram,
+  skfURL,
+} from "../constants/programInfo"
 
 const LoanApp = React.forwardRef((props, ref) => {
   const [email, setEmail] = useState("")
   const [submitted, isSubmitted] = useState(false)
   const [disclaimers, toggleDisclaimers] = useState(false)
-  const [programInfo, setProgramInfo] = useState({
-    programName: "Web Development Remote",
-    active: {
-      program1: false,
-      program2: false,
-      program3: false,
-      program4: false,
-      program5: false,
-      program6: false,
-      program7: false,
-    },
-  })
-  const [loanUrl, setLoanUrl] = useState(
-    `https://my.skills.fund/application?lenderCode=SKDMWD17`
-  ) // if multiple programs, set lenderCode to first program option
-  const formID = "fd391850-d431-42a3-8176-447ef29c1255" // create Hubspot form, get form id after publishing
+  const [loanUrl, setLoanUrl] = useState(programLoanInfo[0].url)
+  const [programName, setProgramName] = useState(programLoanInfo[0].name)
+  const [activeIndex, setActiveIndex] = useState(0) // takes in index of program to execute setActive hook
+  const queryParams = programLoanInfo.map(program => program.queryParams)
   const formName = `${props.schoolName}_apply_now program-apply flex flex-col items-center`
-  const costOfLiving = true // set to false of cost of living is not available
-  const multiplePrograms = true // set to false if there is only one program
-  const onlinePrograms = true // set to true if there is at least one online/remote program offered
-  const schoolHQState = "UT" // if online programs are offered, put the two letter abbreviation for school headquarters state
-
-  const activeClass =
-    "cursor-pointer border-2 rounded border-black text-center py-2 text-white bg-primary mb-2" // highlights selected option in loan app form
-  const inactiveClass =
-    "cursor-pointer border-2 rounded border-black text-center py-2 mb-2"
+  const costOfLiving = faq.costOfLiving
 
   const handleChange = e => {
     setEmail(e.target.value)
   }
 
-  // update segment code and programName (must match internal value on Hubspot form)
-  const handleProgramSelect = programNumber => {
-    switch (programNumber) {
-      case 1: // info should match default
-        setProgramInfo({
-          programName: "Web Development Remote",
-          active: {
-            program1: !programInfo.active.program1,
-            program2: false,
-            program3: false,
-            program4: false,
-            program5: false,
-            program6: false,
-            program7: false,
-          },
-        })
-        setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDMWD17`) // update lenderCode with market segment code from LP
-        break
-      // case 2:
-      //     setProgramInfo({
-      //         programName: 'Web Development Online',
-      //         active: {
-      //             program1: false,
-      //             program2: !programInfo.active.program2,
-      //             program3: false,
-      //             program4: false,
-      //             program5: false,
-      //             program6: false,
-      //             program7: false
-      //         }
-      //     })
-      //     setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDMWON17`) // update lenderCode with market segment code from LP
-      //     break;
-      // case 3:
-      //     setProgramInfo({
-      //         programName: 'Web Development After-Hours',
-      //         active: {
-      //             program1: false,
-      //             program2: false,
-      //             program3: !programInfo.active.program3,
-      //             program4: false,
-      //             program5: false,
-      //             program6: false,
-      //             program7: false,
-      //         }
-      //     })
-      //     setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDMWON19`) // update lenderCode with market segment code from LP
-      //     break;
-      // case 4:
-      // 	setProgramInfo({
-      // 		programName: 'UX Design Immersive',
-      // 		active: {
-      // 			program1: false,
-      // 			program2: false,
-      // 			program3: false,
-      // 			program4: !programInfo.active.program4,
-      // 			program5: false,
-      // 			program6: false,
-      // 			program7: false
-      // 		}
-      // 	});
-      // 	setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDMUX17`); // update lenderCode with market segment code from LP
-      // 	break;
-      case 5:
-        setProgramInfo({
-          programName: "UX Design After-Hours Remote",
-          active: {
-            program1: false,
-            program2: false,
-            program3: false,
-            program4: false,
-            program5: !programInfo.active.program5,
-            program6: false,
-            program7: false,
-          },
-        })
-        setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDMUXAH19`) // update lenderCode with market segment code from LP
-        break
-      case 6:
-        setProgramInfo({
-          programName: "iOS Development Remote",
-          active: {
-            program1: false,
-            program2: false,
-            program3: false,
-            program4: false,
-            program5: false,
-            program6: !programInfo.active.program6,
-            program7: false,
-          },
-        })
-        setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDMIOS17`) // update lenderCode with market segment code from LP
-        break
-      case 7:
-        setProgramInfo({
-          programName: "Software QA Remote",
-          active: {
-            program1: false,
-            program2: false,
-            program3: false,
-            program4: false,
-            program5: false,
-            program6: false,
-            program7: !programInfo.active.program7,
-          },
-        })
-        setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDMQA19`) // update lenderCode with market segment code from LP
-        break
-      default:
-        // info should match case 1
-        setProgramInfo({
-          programName: "Web Development Remote",
-          active: {
-            program1: !programInfo.active.program1,
-            program2: false,
-            program3: false,
-            program4: false,
-            program5: false,
-            program6: false,
-            program7: false,
-          },
-        })
-        setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDMWD17`) // update lenderCode with market segment code from LP
-        break
-    }
+  const toggleIsActiveDropdown = e => {
+    setActiveIndex(Number(e.target.value))
   }
+
+  useEffect(() => {
+    if (queryParams.indexOf(props.location) !== -1) {
+      setActiveIndex(queryParams.indexOf(props.location)) // read query params in url, set default value of select based on index of program
+      setLoanUrl(programLoanInfo[activeIndex]["url"])
+      setProgramName(programLoanInfo[activeIndex]["name"])
+      console.log(programLoanInfo[activeIndex])
+    }
+  }, [])
+
+  useEffect(
+    // this effect allows url to update after intial load if student selects a different program
+    () => {
+      setLoanUrl(programLoanInfo[activeIndex]["url"])
+      setProgramName(programLoanInfo[activeIndex]["name"])
+    },
+    [activeIndex]
+  )
 
   const redirectLoanApp = () => {
     window.open(loanUrl, "_blank", "noopener noreferrer")
   }
 
-  // const trackGoogleAnalyticsEvent = () => {
-  //         ReactGA.event({
-  //             category: 'Apply Now Button | DevMountain',
-  //             action: 'click',
-  //             label: 'submitted loan application'
-  //         })
-  // }
+  const trackGoogleAnalyticsEvent = () => {
+    ReactGA.event({
+      category: `Apply Now Button | ${schoolName}`,
+      action: "click",
+      label: "submitted loan application",
+    })
+  }
 
   const trackFacebookPixel = () => {
     ReactPixel.track("InitiateCheckout", {
@@ -188,7 +71,7 @@ const LoanApp = React.forwardRef((props, ref) => {
   // submit form data to Hubspot, track Google Analytics event, and redirect user to loan application
   const handleSubmit = e => {
     e.preventDefault()
-    const url = `https://api.hsforms.com/submissions/v3/integration/submit/3871135/${formID}`
+    const url = `https://api.hsforms.com/submissions/v3/integration/submit/3871135/${hubspotFormId}`
 
     // hsCookie gets the data necessary to track Hubspot analytics
     const hsCookie = document.cookie.split(";").reduce((cookies, cookie) => {
@@ -209,8 +92,8 @@ const LoanApp = React.forwardRef((props, ref) => {
           value: "Student",
         },
         {
-          name: "select_a_devmountain_program", // update school name to match form field on Hubspot, *** set to program_name if only one program ***
-          value: `${programInfo.programName}`,
+          name: `${selectAProgram}`,
+          value: `${programName}`,
         },
         {
           name: "school",
@@ -227,7 +110,7 @@ const LoanApp = React.forwardRef((props, ref) => {
       ],
       context: {
         hutk: hsCookie.hubspotutk, // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
-        pageUri: `${props.pageUri}`,
+        pageUri: `${skfURL}`,
         pageName: `${props.schoolName} | Skills Fund`,
         ipAddress: `${props.IP}`,
       },
@@ -244,7 +127,7 @@ const LoanApp = React.forwardRef((props, ref) => {
       .then(response => console.log("success", response))
       .catch(error => console.log("error: ", error))
 
-    // trackGoogleAnalyticsEvent()
+    trackGoogleAnalyticsEvent()
     trackFacebookPixel()
     redirectLoanApp()
     isSubmitted(true)
@@ -253,9 +136,9 @@ const LoanApp = React.forwardRef((props, ref) => {
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center justify-center pt-8 mx-2 lg:mx-10 rounded shadow-xl bg-purple-150"
+      className="flex flex-col items-center justify-center pt-8 bg-primary"
     >
-      <h2>Loan Application</h2>
+      <h2 className="text-white">Loan Application</h2>
       <div className="rounded shadow-2xl pt-8 px-8 mx-4 bg-white">
         {/* update with school name, remove cost of living if school does not offer it */}
         <h3 className="text-center font-normal">
@@ -272,101 +155,38 @@ const LoanApp = React.forwardRef((props, ref) => {
         </div>
         {/* update form fields as necessary */}
         <form className={formName} onSubmit={handleSubmit}>
-          <label htmlFor="email">Email address</label>
-          <input
-            className="border-2 rounded border-primary text-center py-2 mb-4 w-64"
-            type="email"
-            name="email"
-            placeholder="Enter your email address"
-            onChange={handleChange}
-            value={email}
-            required
-          />
-          {multiplePrograms && (
-            <div className="w-full lg:w-1/2 px-8 lg:px-0">
-              <p className="text-center text-sm">
-                Select a {props.schoolName} program
-              </p>
-
-              {/* WHEN ADDING AND REMOVING PROGRAMS, PAY ATTENTION TO THE NUMBER AT THE END OF programInfo.active and handleProgramSelect */}
-              <p
-                className={
-                  programInfo.active.program1 ? activeClass : inactiveClass
-                }
-                onClick={() => handleProgramSelect(1)}
-              >
-                Web Development Remote
-              </p>
-              {/* <p className={programInfo.active.program2 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(2)}>Web Development Online</p>
-                        <p className={programInfo.active.program3 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(3)}>Web Development After-Hours</p> */}
-              {/* <p
-                className={
-                  programInfo.active.program4 ? activeClass : inactiveClass
-                }
-                onClick={() => handleProgramSelect(4)}
-              >
-                UX Design Immersive
-              </p> */}
-              <p
-                className={
-                  programInfo.active.program5 ? activeClass : inactiveClass
-                }
-                onClick={() => handleProgramSelect(5)}
-              >
-                UX Design After-Hours Remote
-              </p>
-              <p
-                className={
-                  programInfo.active.program6 ? activeClass : inactiveClass
-                }
-                onClick={() => handleProgramSelect(6)}
-              >
-                iOS Development Remote
-              </p>
-              <p
-                className={
-                  programInfo.active.program7 ? activeClass : inactiveClass
-                }
-                onClick={() => handleProgramSelect(7)}
-              >
-                Software QA Remote
-              </p>
-            </div>
-          )}
-          <div className="hidden">
+          <div className="w-full lg:w-64 px-8 lg:px-0">
+            <label htmlFor="email">Email address</label>
             <input
-              type="text"
-              name="Stakeholder Type"
-              value="Student"
-              readOnly
+              className="border-2 rounded border-black text-center py-2 mb-4 w-64"
+              type="email"
+              name="email"
+              placeholder="Enter your email address"
+              onChange={handleChange}
+              value={email}
+              required
             />
-            <input
-              type="text"
-              name="Program Name"
-              value={programInfo.programName}
-              readOnly
-            />
-            <input
-              type="text"
-              name="School"
-              value={props.schoolName}
-              readOnly
-            />
-            <input
-              type="text"
-              name="Student Loan Application Status"
-              value="BLA Click Email Submitted"
-              readOnly
-            />
-            <input
-              type="text"
-              name="Clicked Begin Loan Application BLA"
-              value="BLA Click"
-              readOnly
-            />
+            <p className="text-center text-sm mb-0">
+              Select your {props.schoolName} program
+            </p>
+            <select
+              id="programSelect"
+              className="border-2 border-primary mb-5 bg-white text-center w-full loanCalculator__selectInput"
+              onChange={toggleIsActiveDropdown}
+              value={activeIndex}
+            >
+              {programLoanInfo.map((program, i) => {
+                return (
+                  <option key={program.name} value={i}>
+                    {program.name}
+                  </option>
+                )
+              })}
+            </select>
           </div>
+          {/* )} */}
           {submitted ? (
-            <span className="pt-4">
+            <span className="pt-4 text-center">
               Thanks for applying! Your loan application has opened in a new
               window. If the application does not open and pop-up blockers have
               been disabled, please contact{" "}
@@ -377,7 +197,7 @@ const LoanApp = React.forwardRef((props, ref) => {
             </span>
           ) : (
             <input
-              className="opacityApply uppercase bg-primary p-3 my-4 w-48 rounded-full shadow-lg text-white cursor-pointer"
+              className="opacityApply uppercase bg-primary p-3 mb-4 w-48 rounded-full shadow-lg text-white cursor-pointer"
               value="APPLY NOW"
               id="loanAppSubmitBtn"
               type="submit"
@@ -389,17 +209,48 @@ const LoanApp = React.forwardRef((props, ref) => {
               a new tab
             </p>
           )}
+          <div className="hidden h-0" id="hide">
+            <input
+              className="text-xs m-0 text-transparent"
+              type="text"
+              name="Stakeholder Type"
+              value="Student"
+              readOnly
+            />
+            <input
+              className="text-xs m-0 text-transparent"
+              type="text"
+              name="Program Name"
+              value={programLoanInfo.programName}
+              readOnly
+            />
+            <input
+              className="text-xs m-0 text-transparent"
+              type="text"
+              name="School"
+              value={props.schoolName}
+              readOnly
+            />
+            <input
+              className="text-xs m-0 text-transparent"
+              type="text"
+              name="Student Loan Application Status"
+              value="BLA Click Email Submitted"
+              readOnly
+            />
+            <input
+              className="text-xs m-0 text-transparent"
+              type="text"
+              name="Clicked Begin Loan Application BLA"
+              value="BLA Click"
+              readOnly
+            />
+          </div>
         </form>
       </div>
-      {/* {onlinePrograms && 
-                    <p className="m-0 text-base pt-8">
-                        <strong className="m-0">ATTENTION ONLINE STUDENTS: </strong>When entering "Applicant Information" within your loan application, <strong className="m-0">please select {schoolHQState} as "the state of the school you plan to attend."</strong>
-                    </p>
-                } */}
       <div className="px-8 text-sm">
-        {/* <p className="text-center pt-8">If you are a cosigner, begin the addendum now by clicking <a className="text-primary" href="https://sf.privateloan.studentloan.org/Cosigner.do?execution=e1s1" rel="noreferrer noopener" target="_blank">here</a>.</p> */}
         <p
-          className="text-center text-primary cursor-pointer font-bold"
+          className="text-center text-white underline cursor-pointer font-bold my-4"
           onClick={() => toggleDisclaimers(!disclaimers)}
         >
           Disclaimers
