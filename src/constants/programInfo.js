@@ -75,25 +75,55 @@ export const faq = {
   loanRange: [
     {
       programName: "iOS Remote",
-      maxAmount: "$6,900",
+      maxAmount: "$6,450",
+      col: true,
+      colAmount: "$3,000",
+    },
+    {
+      programName: "iOS Immersive",
+      maxAmount: "$10,450",
       col: true,
       colAmount: "$3,000",
     },
     {
       programName: "UX Design After Hours Remote",
-      maxAmount: "$3,900",
+      maxAmount: "$3,450",
       col: false,
       colAmount: "$6,000",
     },
     {
+      programName: "UX Design After Hours",
+      maxAmount: "$4,300",
+      col: false,
+      colAmount: "$6,000",
+    },
+    {
+      programName: "UX Design",
+      maxAmount: "$10,450",
+      col: true,
+      colAmount: "$3,000",
+    },
+    {
       programName: "Software Quality Assurance Remote",
-      maxAmount: "$4,900",
+      maxAmount: "$4,450",
+      col: false,
+      colAmount: "$6,000",
+    },
+    {
+      programName: "Software Quality Assurance",
+      maxAmount: "$7,050",
       col: false,
       colAmount: "$6,000",
     },
     {
       programName: "Web Development Remote",
-      maxAmount: "$6,900",
+      maxAmount: "$6,450",
+      col: true,
+      colAmount: "$3,000",
+    },
+    {
+      programName: "Web Development Immersive",
+      maxAmount: "$11,450",
       col: true,
       colAmount: "$3,000",
     },
@@ -158,14 +188,14 @@ export const programLoanInfo = [
     url: "https://my.skills.fund/application?lenderCode=SKDMIOS17",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 9900,
+      maxLoanAmt: 9450,
       loanTerm36: true,
       loanTerm60: true,
       "Interest Only": {
         // interest-only
-        k: 7,
-        apr36: 11.5,
-        apr60: 12.8,
+        k: 6,
+        apr36: 11.59,
+        apr60: 12.84,
       },
       "Immediate Repayment": {
         apr36: 12.36,
@@ -182,55 +212,71 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 9900,
+          maxLoanAmt: 9450,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
-            k: 7,
-            apr36: 11.5,
-            apr60: 12.8,
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
           },
           "Immediate Repayment": {
             apr36: 12.36,
           },
         },
       },
-      {
-        location: "Metro 2",
-        loanInfo: {
-          maxLoanAmt: 15545,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 5,
-            apr36: 11.16,
-            apr60: 12.51,
-          },
-          "Immediate Repayment": null,
-        },
+    ],
+  },
+  {
+    name: "iOS Immersive",
+    url: "https://my.skills.fund/application?lenderCode=SKDMIOS17",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 13450,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 6,
+        apr36: 11.59,
+        apr60: 12.84,
       },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
       {
-        location: "Metro 3",
+        location: "Metro 1",
         loanInfo: {
-          maxLoanAmt: 20545,
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 13450,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
-            k: 5,
-            apr36: 11.16,
-            apr60: 12.51,
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
           },
-          "Immediate Repayment": null,
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
         },
       },
     ],
   },
   {
-    name: "Software Quality Assurance Remote",
-    url: "https://my.skills.fund/application?lenderCode=SKDMQA19", // $13,500 max tuition, no COL alert
+    name: "Software Quality Assurance",
+    url: "https://my.skills.fund/application?lenderCode=SFDMSQA20", // $13,500 max tuition, no COL alert
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 4900,
+      maxLoanAmt: 7050,
       loanTerm36: true,
       loanTerm60: true,
       "Interest Only": {
@@ -254,7 +300,7 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 4900,
+          maxLoanAmt: 7050,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
@@ -267,32 +313,48 @@ export const programLoanInfo = [
           },
         },
       },
-      {
-        location: "Metro 2",
-        loanInfo: {
-          maxLoanAmt: 15545,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 5,
-            apr36: 11.16,
-            apr60: 12.51,
-          },
-          "Immediate Repayment": null,
-        },
+    ],
+  },
+  {
+    name: "Software Quality Assurance Remote",
+    url: "https://my.skills.fund/application?lenderCode=SKDMQA19", // $13,500 max tuition, no COL alert
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 4450,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 4,
+        apr36: 11.8,
+        apr60: 12.93,
       },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
       {
-        location: "Metro 3",
+        location: "Metro 1",
         loanInfo: {
-          maxLoanAmt: 20545,
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 4450,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
-            k: 5,
-            apr36: 11.16,
-            apr60: 12.51,
+            k: 4,
+            apr36: 11.8,
+            apr60: 12.93,
           },
-          "Immediate Repayment": null,
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
         },
       },
     ],
@@ -303,6 +365,52 @@ export const programLoanInfo = [
     loanInfo: {
       // match loanInfo in first metro below
       maxLoanAmt: 3900,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 7,
+        apr36: 11.5,
+        apr60: 12.8,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+        apr60: 13.14,
+      },
+    },
+    defaultLoanType: "Immediate Repayment", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Immediate Repayment"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
+      {
+        location: "Metro 1",
+        loanInfo: {
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 3900,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 7,
+            apr36: 11.5,
+            apr60: 12.8,
+          },
+          "Immediate Repayment": {
+            apr36: 12.36,
+            apr60: 13.14,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: "UX Design After Hours",
+    url: "https://my.skills.fund/application?lenderCode=SFDMUDAH20",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 4300,
       loanTerm36: true,
       loanTerm60: true,
       "Interest Only": {
@@ -327,7 +435,7 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 3900,
+          maxLoanAmt: 4300,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
@@ -341,34 +449,6 @@ export const programLoanInfo = [
           },
         },
       },
-      {
-        location: "Metro 2",
-        loanInfo: {
-          maxLoanAmt: 15545,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 8,
-            apr36: 10.94,
-            apr60: 12.51,
-          },
-          "Immediate Repayment": null,
-        },
-      },
-      {
-        location: "Metro 3",
-        loanInfo: {
-          maxLoanAmt: 20545,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 5,
-            apr36: 11.16,
-            apr60: 12.51,
-          },
-          "Immediate Repayment": null,
-        },
-      },
     ],
   },
   {
@@ -376,14 +456,14 @@ export const programLoanInfo = [
     url: "https://my.skills.fund/application?lenderCode=SKDMWDR19",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 9900,
+      maxLoanAmt: 9450,
       loanTerm36: true,
       loanTerm60: true,
       "Interest Only": {
         // interest-only
-        k: 7,
-        apr36: 11.5,
-        apr60: 12.8,
+        k: 6,
+        apr36: 11.59,
+        apr60: 12.84,
       },
       "Immediate Repayment": {
         apr36: 12.36,
@@ -400,45 +480,105 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 9900,
+          maxLoanAmt: 9450,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
-            k: 7,
-            apr36: 11.5,
-            apr60: 12.8,
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
           },
           "Immediate Repayment": {
             apr36: 12.36,
           },
         },
       },
+    ],
+  },
+  {
+    name: "Web Development Immersive",
+    url: "https://my.skills.fund/application?lenderCode=SKDMWD17",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 14450,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 6,
+        apr36: 11.59,
+        apr60: 12.84,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
       {
-        location: "Metro 2",
+        location: "Metro 1",
         loanInfo: {
-          maxLoanAmt: 15545,
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 14450,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
-            k: 5,
-            apr36: 11.16,
-            apr60: 12.51,
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
           },
-          "Immediate Repayment": null,
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
         },
       },
+    ],
+  },
+  {
+    name: "UX Design",
+    url: "https://my.skills.fund/application?lenderCode=SKDMUX17",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 13450,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 6,
+        apr36: 11.59,
+        apr60: 12.84,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
       {
-        location: "Metro 3",
+        location: "Metro 1",
         loanInfo: {
-          maxLoanAmt: 20545,
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 13450,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
-            k: 5,
-            apr36: 11.16,
-            apr60: 12.51,
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
           },
-          "Immediate Repayment": null,
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
         },
       },
     ],
