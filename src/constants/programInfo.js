@@ -364,7 +364,7 @@ export const programLoanInfo = [
     url: "https://my.skills.fund/application?lenderCode=SKDMUXAH19",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 3900,
+      maxLoanAmt: 3450,
       loanTerm36: true,
       loanTerm60: true,
       "Interest Only": {
@@ -389,7 +389,7 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 3900,
+          maxLoanAmt: 3450,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
