@@ -104,6 +104,12 @@ export const faq = {
       colAmount: "$3,000",
     },
     {
+      programName: "UX Immersive Remote",
+      maxAmount: "$6,450",
+      col: true,
+      colAmount: "$3,000",
+    },
+    {
       programName: "Software Quality Assurance Remote",
       maxAmount: "$4,450",
       col: false,
@@ -569,6 +575,50 @@ export const programLoanInfo = [
         loanInfo: {
           // // match loanInfo to Program 1 above
           maxLoanAmt: 13450,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
+          },
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: "UX Immersive Remote",
+    url: "https://my.skills.fund/application?lenderCode=SFDMUXIR20",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 9450,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 6,
+        apr36: 11.59,
+        apr60: 12.84,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
+      {
+        location: "Metro 1",
+        loanInfo: {
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 9450,
           loanTerm36: true,
           loanTerm60: true,
           "Interest Only": {
