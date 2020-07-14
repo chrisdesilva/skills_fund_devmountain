@@ -135,7 +135,7 @@ export const faq = {
   loanRange: [
     {
       programName: "iOS Remote",
-      maxAmount: "$6,450",
+      maxAmount: "$7,450",
       col: true,
       colAmount: "$3,000",
     },
@@ -147,7 +147,7 @@ export const faq = {
     },
     {
       programName: "UX Design After Hours Remote",
-      maxAmount: "$3,450",
+      maxAmount: "$7,450",
       col: false,
       colAmount: "$6,000",
     },
@@ -165,7 +165,7 @@ export const faq = {
     },
     {
       programName: "UX Immersive Remote",
-      maxAmount: "$6,450",
+      maxAmount: "$7,450",
       col: true,
       colAmount: "$3,000",
     },
@@ -183,7 +183,7 @@ export const faq = {
     },
     {
       programName: "Web Development Remote",
-      maxAmount: "$6,450",
+      maxAmount: "$7,450",
       col: true,
       colAmount: "$3,000",
     },
