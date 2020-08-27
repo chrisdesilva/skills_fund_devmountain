@@ -141,7 +141,7 @@ export const faq = {
     },
     {
       programName: "iOS Immersive",
-      maxAmount: "$10,450",
+      maxAmount: "$9,450",
       col: true,
       colAmount: "$3,000",
     },
@@ -153,13 +153,13 @@ export const faq = {
     },
     {
       programName: "UX Design After Hours",
-      maxAmount: "$4,300",
+      maxAmount: "$7,450",
       col: false,
       colAmount: "$6,000",
     },
     {
-      programName: "UX Design",
-      maxAmount: "$10,450",
+      programName: "UX Design Immersive",
+      maxAmount: "$9,450",
       col: true,
       colAmount: "$3,000",
     },
@@ -177,7 +177,7 @@ export const faq = {
     },
     {
       programName: "Software Quality Assurance",
-      maxAmount: "$7,050",
+      maxAmount: "$6,450",
       col: false,
       colAmount: "$6,000",
     },
@@ -188,8 +188,14 @@ export const faq = {
       colAmount: "$3,000",
     },
     {
+      programName: "Web Development Part-Time Remote",
+      maxAmount: "$7,450",
+      col: false,
+      colAmount: "$3,000",
+    },
+    {
       programName: "Web Development Immersive",
-      maxAmount: "$11,450",
+      maxAmount: "$9,450",
       col: true,
       colAmount: "$3,000",
     },
@@ -251,7 +257,7 @@ export const programLoanInfo = [
   // update with program names and corresponding loan URLs with market segment code from Master Loan Parameters
   {
     name: "iOS Remote",
-    url: "https://my.skills.fund/application?lenderCode=SKDMIOS17",
+    url: "https://my.skills.fund/application?lenderCode=SKDMIOSR20",
     loanInfo: {
       // match loanInfo in first metro below
       maxLoanAmt: 9450,
@@ -562,6 +568,50 @@ export const programLoanInfo = [
     ],
   },
   {
+    name: "Web Development Part-Time Remote",
+    url: "https://my.skills.fund/application?lenderCode=SKDMWDPTR20",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 9450,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 6,
+        apr36: 11.59,
+        apr60: 12.84,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
+      {
+        location: "Metro 1",
+        loanInfo: {
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 9450,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
+          },
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
+        },
+      },
+    ],
+  },
+  {
     name: "Web Development Immersive",
     url: "https://my.skills.fund/application?lenderCode=SKDMWD17",
     loanInfo: {
@@ -606,7 +656,7 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "UX Design",
+    name: "UX Design Immersive",
     url: "https://my.skills.fund/application?lenderCode=SKDMUX17",
     loanInfo: {
       // match loanInfo in first metro below
