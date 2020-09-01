@@ -111,7 +111,8 @@ export const previewText = {
 export const faq = {
   // faq section
   costOfLiving: true, // true if at least one program has cost of living included
-  costOfLivingPrograms: "iOS Remote and UX Design After Hours Remote", // leave as empty string is cost of living availability is the same across all programs
+  costOfLivingPrograms:
+    "iOS Development Full-Time Remote and UX Design Part-Time Remote", // leave as empty string is cost of living availability is the same across all programs
   multCostOfLivingPrograms: true, // true if costOfLivingPrograms string has more than one program
   interestOnly: true, // true if interest-only payments are an option
   immediateRepayment: true, // true if immediate repayment is an option
@@ -134,55 +135,55 @@ export const faq = {
   // max loan amounts by program for faq1
   loanRange: [
     {
-      programName: "iOS Remote",
+      programName: "iOS Development Full-Time Remote",
       maxAmount: "$7,450",
       col: true,
       colAmount: "$3,000",
     },
     {
-      programName: "iOS Immersive",
+      programName: "iOS Development Full-Time In-Person",
       maxAmount: "$9,450",
       col: true,
       colAmount: "$3,000",
     },
     {
-      programName: "UX Design After Hours Remote",
+      programName: "UX Design Part-Time Remote",
       maxAmount: "$7,450",
       col: false,
       colAmount: "$6,000",
     },
     {
-      programName: "UX Design After Hours",
+      programName: "UX Design Part-Time In-Person",
       maxAmount: "$7,450",
       col: false,
       colAmount: "$6,000",
     },
     {
-      programName: "UX Design Immersive",
+      programName: "UX Design Full-Time In-Person",
       maxAmount: "$9,450",
       col: true,
       colAmount: "$3,000",
     },
     {
-      programName: "UX Immersive Remote",
+      programName: "UX Design Full-Time Remote",
       maxAmount: "$7,450",
       col: true,
       colAmount: "$3,000",
     },
     {
-      programName: "Software Quality Assurance Remote",
+      programName: "Software Quality Assurance Full-Time Remote",
       maxAmount: "$4,450",
       col: false,
       colAmount: "$6,000",
     },
     {
-      programName: "Software Quality Assurance",
+      programName: "Software Quality Assurance Full-Time In-Person",
       maxAmount: "$6,450",
       col: false,
       colAmount: "$6,000",
     },
     {
-      programName: "Web Development Remote",
+      programName: "Web Development Full-Time Remote",
       maxAmount: "$7,450",
       col: true,
       colAmount: "$3,000",
@@ -194,9 +195,15 @@ export const faq = {
       colAmount: "$3,000",
     },
     {
-      programName: "Web Development Immersive",
+      programName: "Web Development Full-Time In-Person",
       maxAmount: "$9,450",
       col: true,
+      colAmount: "$3,000",
+    },
+    {
+      programName: "Web Development Part-Time In-Person",
+      maxAmount: "$9,450",
+      col: false,
       colAmount: "$3,000",
     },
   ],
@@ -256,7 +263,7 @@ export const moreThanSixPrograms = false // set to true if there are 7 or more p
 export const programLoanInfo = [
   // update with program names and corresponding loan URLs with market segment code from Master Loan Parameters
   {
-    name: "iOS Remote",
+    name: "iOS Development Full-Time Remote",
     url: "https://my.skills.fund/application?lenderCode=SKDMIOSR20",
     loanInfo: {
       // match loanInfo in first metro below
@@ -300,7 +307,7 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "iOS Immersive",
+    name: "iOS Development Full-Time In-Person",
     url: "https://my.skills.fund/application?lenderCode=SKDMIOS17",
     loanInfo: {
       // match loanInfo in first metro below
@@ -344,7 +351,7 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "Software Quality Assurance",
+    name: "Software Quality Assurance Full-Time In-Person",
     url: "https://my.skills.fund/application?lenderCode=SFDMSQA20", // $13,500 max tuition, no COL alert
     loanInfo: {
       // match loanInfo in first metro below
@@ -388,7 +395,7 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "Software Quality Assurance Remote",
+    name: "Software Quality Assurance Full-Time Remote",
     url: "https://my.skills.fund/application?lenderCode=SKDMQA19", // $13,500 max tuition, no COL alert
     loanInfo: {
       // match loanInfo in first metro below
@@ -432,7 +439,7 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "UX Design After Hours Remote",
+    name: "UX Design Part-Time Remote",
     url: "https://my.skills.fund/application?lenderCode=SKDMUXAH19",
     loanInfo: {
       // match loanInfo in first metro below
@@ -478,7 +485,7 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "UX Design After Hours",
+    name: "UX Design Part-Time In-Person",
     url: "https://my.skills.fund/application?lenderCode=SFDMUDAH20",
     loanInfo: {
       // match loanInfo in first metro below
@@ -524,7 +531,7 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "Web Development Remote",
+    name: "Web Development Full-Time Remote",
     url: "https://my.skills.fund/application?lenderCode=SKDMWDR19",
     loanInfo: {
       // match loanInfo in first metro below
@@ -612,7 +619,7 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "Web Development Immersive",
+    name: "Web Development Full-Time In-Person",
     url: "https://my.skills.fund/application?lenderCode=SKDMWD17",
     loanInfo: {
       // match loanInfo in first metro below
@@ -656,7 +663,51 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "UX Design Immersive",
+    name: "Web Development Part-Time In-Person",
+    url: "https://my.skills.fund/application?lenderCode=SKDMWDPTIP20",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 14450,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 6,
+        apr36: 11.59,
+        apr60: 12.84,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
+      {
+        location: "Metro 1",
+        loanInfo: {
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 14450,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
+          },
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: "UX Design Full-Time In-Person",
     url: "https://my.skills.fund/application?lenderCode=SKDMUX17",
     loanInfo: {
       // match loanInfo in first metro below
@@ -700,7 +751,7 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "UX Immersive Remote",
+    name: "UX Design Full-Time Remote",
     url: "https://my.skills.fund/application?lenderCode=SFDMUXIR20",
     loanInfo: {
       // match loanInfo in first metro below
