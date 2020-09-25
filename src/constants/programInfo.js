@@ -183,6 +183,18 @@ export const faq = {
       colAmount: "$6,000",
     },
     {
+      programName: "Software Quality Assurance Part-Time Remote",
+      maxAmount: "$4,450",
+      col: false,
+      colAmount: "$6,000",
+    },
+    {
+      programName: "Software Quality Assurance Part-Time In-Person",
+      maxAmount: "$6,450",
+      col: false,
+      colAmount: "$6,000",
+    },
+    {
       programName: "Web Development Full-Time Remote",
       maxAmount: "$7,450",
       col: true,
@@ -397,6 +409,94 @@ export const programLoanInfo = [
   {
     name: "Software Quality Assurance Full-Time Remote",
     url: "https://my.skills.fund/application?lenderCode=SKDMQA19", // $13,500 max tuition, no COL alert
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 4450,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 4,
+        apr36: 11.8,
+        apr60: 12.93,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
+      {
+        location: "Metro 1",
+        loanInfo: {
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 4450,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 4,
+            apr36: 11.8,
+            apr60: 12.93,
+          },
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: "Software Quality Assurance Part-Time In-Person",
+    url: "https://my.skills.fund/application?lenderCode=SKDMSQAPTIP20", // $13,500 max tuition, no COL alert
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 7050,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        // interest-only
+        k: 4,
+        apr36: 11.8,
+        apr60: 12.93,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
+      {
+        location: "Metro 1",
+        loanInfo: {
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 7050,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 4,
+            apr36: 11.8,
+            apr60: 12.93,
+          },
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: "Software Quality Assurance Part-Time Remote",
+    url: "https://my.skills.fund/application?lenderCode=SKDMSQAPTR20", // $13,500 max tuition, no COL alert
     loanInfo: {
       // match loanInfo in first metro below
       maxLoanAmt: 4450,
