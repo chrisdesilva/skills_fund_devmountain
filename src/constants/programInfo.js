@@ -112,7 +112,7 @@ export const faq = {
   // faq section
   costOfLiving: true, // true if at least one program has cost of living included
   costOfLivingPrograms:
-    "iOS Development Full-Time In-Person, iOS Development Full-Time Remote, UX Design Full-Time In-Person, UX Design Full-Time Remote, Web Development Full-Time In-Person and Web Development Full-Time Remote", // leave as empty string is cost of living availability is the same across all programs
+    "iOS Development Full-Time In-Person, iOS Development Full-Time Remote, UX Design Full-Time In-Person, UX Design Full-Time Remote, Web Development Full-Time In-Person, Web Development Full-Time Remote, Software Quality Assurance Full-Time Remote, and Software Quality Assurance Full-Time In-Person", // leave as empty string is cost of living availability is the same across all programs
   multCostOfLivingPrograms: true, // true if costOfLivingPrograms string has more than one program
   interestOnly: true, // true if interest-only payments are an option
   immediateRepayment: true, // true if immediate repayment is an option
@@ -173,14 +173,14 @@ export const faq = {
     {
       programName: "Software Quality Assurance Full-Time Remote",
       maxAmount: "$4,450",
-      col: false,
-      colAmount: "$6,000",
+      col: true,
+      colAmount: "$3,000",
     },
     {
       programName: "Software Quality Assurance Full-Time In-Person",
       maxAmount: "$6,450",
-      col: false,
-      colAmount: "$6,000",
+      col: true,
+      colAmount: "$3,000",
     },
     {
       programName: "Software Quality Assurance Part-Time Remote",
