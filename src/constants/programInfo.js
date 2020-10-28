@@ -112,7 +112,7 @@ export const faq = {
   // faq section
   costOfLiving: true, // true if at least one program has cost of living included
   costOfLivingPrograms:
-    "iOS Development Full-Time Remote and UX Design Part-Time Remote", // leave as empty string is cost of living availability is the same across all programs
+    "iOS Development Full-Time In-Person, iOS Development Full-Time Remote, UX Design Full-Time In-Person, UX Design Full-Time Remote, Web Development Full-Time In-Person and Web Development Full-Time Remote", // leave as empty string is cost of living availability is the same across all programs
   multCostOfLivingPrograms: true, // true if costOfLivingPrograms string has more than one program
   interestOnly: true, // true if interest-only payments are an option
   immediateRepayment: true, // true if immediate repayment is an option
